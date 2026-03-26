@@ -63,7 +63,7 @@
       z-index: 0;
     }
 
-    a { color: inherit; }
+    a { color: inherit; text-decoration: none; }
     img { max-width: 100%; display: block; }
     button, input, textarea, select { font: inherit; }
 
@@ -187,10 +187,17 @@
 
     .btn,
     .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
       padding: 13px 20px;
+      border-radius: 999px;
       color: var(--text);
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(217,179,106,0.28);
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease;
     }
 
     .btn:hover,
@@ -206,7 +213,6 @@
     }
 
     .btn-outline {
-      padding: 13px 20px;
       color: var(--text);
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(217,179,106,0.28);
@@ -221,6 +227,11 @@
       color: var(--gold);
       cursor: pointer;
       box-shadow: var(--shadow-soft);
+      transition: transform .25s ease;
+    }
+
+    .icon-btn:hover {
+      transform: translateY(-2px);
     }
 
     .cover {
@@ -262,6 +273,36 @@
       margin: 18px auto 0;
       line-height: 1.9;
       color: var(--muted);
+    }
+
+    .guest-block {
+      margin-top: 26px;
+      padding: 20px 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(216,176,109,0.16);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+    }
+
+    .guest-label {
+      font-size: 0.82rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #f1dfbc;
+      margin-bottom: 10px;
+    }
+
+    .guest-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: #fffaf2;
+      line-height: 1.3;
+      font-weight: 600;
+    }
+
+    .guest-note {
+      margin-top: 8px;
+      color: #d9e4f2;
+      font-size: 0.95rem;
     }
 
     .hero {
@@ -887,19 +928,6 @@
       margin-top: 24px;
     }
 
-    .badge-note {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-top: 18px;
-      padding: 10px 14px;
-      border-radius: 999px;
-      border: 1px solid rgba(216,176,109,0.18);
-      background: rgba(255,255,255,0.06);
-      color: var(--accent);
-      font-size: 0.88rem;
-    }
-
     @media (max-width: 980px) {
       .grid-2,
       .grid-3,
@@ -934,16 +962,6 @@
 
       .countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .photo img { height: 280px; }
-      .icon-btn {
-        width: 56px;
-        height: 56px;
-        border-radius: 50%;
-        border: 1px solid rgba(217,179,106,0.3);
-        background: rgba(10,22,40,0.92);
-        color: var(--gold);
-        cursor: pointer;
-        box-shadow: var(--shadow-soft);
-      }
       .wish-top { flex-direction: column; align-items: start; }
       .story-list::before { left: 17px; }
       .story-item { grid-template-columns: 46px 1fr; gap: 14px; }
@@ -978,17 +996,6 @@
   </style>
 </head>
 <body>
-  <!--
-    =========================================================
-    PETUNJUK PAKAI
-    =========================================================
-    1. Ganti data di bagian CONFIG.
-    2. Simpan file ini sebagai index.html.
-    3. Taruh file foto, musik, dan QRIS di folder yang sama.
-    4. Untuk RSVP + ucapan online, isi CONFIG.formEndpoint.
-    5. Kalau endpoint belum diisi, data RSVP disimpan di browser sebagai demo.
-  -->
-
   <div class="cover" id="cover">
     <div class="cover-card glass">
       <div class="eyebrow">Undangan Pernikahan</div>
@@ -997,6 +1004,13 @@
       <p class="cover-text" id="coverText">
         Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.
       </p>
+
+      <div class="guest-block">
+        <div class="guest-label">Kepada Yth.</div>
+        <div class="guest-name">Syaifulloh dan Istri</div>
+        <div class="guest-note">Mohon maaf apabila ada kesalahan penulisan nama dan gelar</div>
+      </div>
+
       <div class="utility-row">
         <button class="btn" id="openInvitation">Buka Undangan</button>
       </div>
@@ -1417,11 +1431,7 @@
       backgroundMusic: 'musik1.mp3',
       galleryImages: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
       qrisImage: 'foto_qris.jpeg',
-
-      // isi kalau sudah punya endpoint online
-      // contoh: 'https://script.google.com/macros/s/AKfycb.../exec'
       formEndpoint: '',
-
       localStorageKey: 'wedding_wishes_demo_v1'
     };
 
@@ -1507,8 +1517,6 @@
       const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.mapsQuery)}`;
       const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(CONFIG.mapsQuery)}&z=15&output=embed`;
 
-      const mapsButton = document.getElementById('mapsButton');
-      if (mapsButton) mapsButton.href = mapUrl;
       document.getElementById('mapsButtonSecondary').href = mapUrl;
       document.getElementById('googleMapsEmbed').src = embedUrl;
     }
