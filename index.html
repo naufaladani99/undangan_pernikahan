@@ -1,0 +1,1686 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wedding Invitation | Naufal & Adinda</title>
+  <meta name="description" content="Undangan pernikahan elegan, responsif, dengan RSVP dan ucapan tamu." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&family=Parisienne&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1220;
+      --bg-soft: #111b2e;
+      --surface: rgba(255,255,255,0.08);
+      --surface-strong: rgba(255,255,255,0.12);
+      --text: #f8f4ee;
+      --muted: #cbd5e1;
+      --gold: #d8b06d;
+      --gold-soft: rgba(216,176,109,0.18);
+      --line: rgba(216,176,109,0.18);
+      --accent: #ead7b0;
+      --danger: #e35d5d;
+      --success: #63c29a;
+      --shadow: 0 24px 60px rgba(0,0,0,0.28);
+      --shadow-soft: 0 14px 28px rgba(0,0,0,0.18);
+      --radius-xl: 32px;
+      --radius-lg: 24px;
+      --radius-md: 18px;
+      --container: 1120px;
+      --section-space: 96px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top, rgba(216,176,109,0.08), transparent 22%),
+        radial-gradient(circle at 85% 10%, rgba(112, 161, 255, 0.10), transparent 18%),
+        linear-gradient(180deg, #0f1728 0%, #0b1220 42%, #080d18 100%);
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(45deg, rgba(216,176,109,0.16) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(216,176,109,0.16) 25%, transparent 25%);
+      background-size: 34px 34px;
+      background-position: 0 0, 0 17px;
+      z-index: 0;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; display: block; }
+    button, input, textarea, select { font: inherit; }
+
+    .container {
+      width: min(var(--container), calc(100% - 28px));
+      margin-inline: auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .section {
+      padding: var(--section-space) 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .glass {
+      background: linear-gradient(180deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+      border: 1px solid var(--line);
+      border-radius: var(--radius-xl);
+      backdrop-filter: blur(14px);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .glass::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(216,176,109,0.05), transparent 36%, transparent 72%, rgba(255,255,255,0.04));
+    }
+
+    .eyebrow {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.74rem;
+      color: #ecd9b5;
+    }
+
+    .script {
+      font-family: 'Parisienne', cursive;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .section-head {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 34px;
+    }
+
+    .section-head .script {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+      margin-bottom: 8px;
+    }
+
+    .section-title,
+    .hero-title,
+    .name,
+    .big-date,
+    .footer-title,
+    .story-year {
+      font-family: 'Cormorant Garamond', serif;
+    }
+
+    .section-title {
+      font-size: clamp(2.4rem, 6vw, 4.1rem);
+      line-height: 1.02;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .section-desc {
+      margin-top: 16px;
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .divider {
+      width: 140px;
+      height: 2px;
+      margin: 16px auto 0;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      position: relative;
+    }
+
+    .divider::before,
+    .divider::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 10px;
+      height: 10px;
+      border: 1px solid rgba(216,176,109,0.7);
+      transform: translateY(-50%) rotate(45deg);
+    }
+
+    .divider::before { left: 20px; }
+    .divider::after { right: 20px; }
+
+    .btn,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform .25s ease, box-shadow .25s ease, background .25s ease, border-color .25s ease;
+      border: none;
+      white-space: nowrap;
+    }
+
+    .btn:hover,
+    .btn-outline:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn {
+      padding: 14px 22px;
+      color: #101522;
+      background: linear-gradient(135deg, #f0dbb3, #d8b06d);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.2);
+    }
+
+    .btn-outline {
+      padding: 13px 20px;
+      color: var(--text);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(216,176,109,0.22);
+    }
+
+    .icon-btn {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      border: 1px solid rgba(216,176,109,0.3);
+      background: rgba(11,18,32,0.9);
+      color: var(--gold);
+      cursor: pointer;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .cover {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: 22px;
+      background:
+        linear-gradient(rgba(8,13,24,0.82), rgba(8,13,24,0.92)),
+        radial-gradient(circle at top, rgba(216,176,109,0.12), transparent 28%),
+        linear-gradient(135deg, #17233b, #0a101c);
+      transition: opacity .7s ease, visibility .7s ease;
+    }
+
+    .cover.hidden { opacity: 0; visibility: hidden; }
+
+    .cover-card {
+      width: min(96%, 720px);
+      padding: 54px 28px;
+      text-align: center;
+    }
+
+    .cover-card .script {
+      font-size: clamp(2.2rem, 5vw, 3.3rem);
+      margin: 12px 0 8px;
+    }
+
+    .cover-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 5.4rem);
+      line-height: .95;
+      font-weight: 600;
+    }
+
+    .cover-text {
+      max-width: 540px;
+      margin: 18px auto 0;
+      line-height: 1.9;
+      color: var(--muted);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 126px 18px 92px;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(8,13,24,0.55), rgba(8,13,24,0.82)),
+        linear-gradient(135deg, #1a2942, #0b1220 60%, #080d18);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 320px;
+      height: 320px;
+      border: 1px solid rgba(216,176,109,0.12);
+      transform: rotate(45deg);
+      animation: spin 20s linear infinite;
+    }
+
+    .hero::before { top: -170px; left: -170px; }
+    .hero::after { right: -170px; bottom: -170px; animation-direction: reverse; }
+
+    @keyframes spin {
+      from { transform: rotate(45deg); }
+      to { transform: rotate(405deg); }
+    }
+
+    .hero-wrap {
+      max-width: 980px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title {
+      font-size: clamp(3.1rem, 8vw, 6.8rem);
+      line-height: .92;
+      font-weight: 600;
+    }
+
+    .ampersand {
+      display: block;
+      margin: 8px 0 10px;
+      color: var(--gold);
+      font-size: clamp(1.8rem, 4vw, 3rem);
+    }
+
+    .hero-subtitle {
+      margin-top: 18px;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.82rem;
+      color: var(--accent);
+    }
+
+    .hero-desc {
+      max-width: 760px;
+      margin: 24px auto 0;
+      line-height: 1.95;
+      color: var(--muted);
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 28px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(216,176,109,0.2);
+      background: rgba(255,255,255,0.06);
+      color: var(--text);
+    }
+
+    .fab-music {
+      position: fixed;
+      right: 18px;
+      bottom: 30px;
+      z-index: 60;
+    }
+
+    .fab-music.playing { animation: pulse 2.2s infinite; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.06); }
+    }
+
+    .grid-2,
+    .grid-3 {
+      display: grid;
+      gap: 22px;
+    }
+
+    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+    .card {
+      padding: 32px 26px;
+    }
+
+    .mini-label {
+      display: inline-block;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 0.75rem;
+      color: #ecd9b5;
+      margin-bottom: 12px;
+    }
+
+    .name {
+      font-size: clamp(2rem, 4vw, 2.65rem);
+      line-height: 1.06;
+      margin-bottom: 10px;
+      color: var(--text);
+    }
+
+    .body-text,
+    .detail-list,
+    .muted,
+    .story-text,
+    .wish-item p,
+    .field-note {
+      color: var(--muted);
+      line-height: 1.9;
+    }
+
+    .family-note {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(216,176,109,0.12);
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .big-date {
+      font-size: clamp(3.8rem, 7vw, 5.8rem);
+      line-height: .88;
+      font-weight: 600;
+      margin-bottom: 14px;
+    }
+
+    .detail-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .count-item {
+      text-align: center;
+      padding: 22px 10px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(216,176,109,0.12);
+    }
+
+    .count-item strong {
+      display: block;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.5rem;
+      color: var(--text);
+      line-height: 1;
+    }
+
+    .count-item span {
+      display: block;
+      margin-top: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.76rem;
+      color: var(--muted);
+    }
+
+    .quote-box {
+      max-width: 880px;
+      margin: 0 auto;
+      padding: 38px 28px;
+      text-align: center;
+    }
+
+    .quote-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(1.8rem, 3.4vw, 2.5rem);
+      line-height: 1.52;
+      color: var(--text);
+    }
+
+    .quote-note {
+      margin-top: 14px;
+      color: var(--muted);
+      line-height: 1.85;
+    }
+
+    .story-list {
+      position: relative;
+      display: grid;
+      gap: 18px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .story-list::before {
+      content: "";
+      position: absolute;
+      left: 18px;
+      top: 10px;
+      bottom: 10px;
+      width: 1px;
+      background: linear-gradient(180deg, rgba(216,176,109,0), rgba(216,176,109,0.6), rgba(216,176,109,0));
+    }
+
+    .story-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 26px 24px;
+    }
+
+    .story-dot {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #eedbb8, #d8b06d);
+      color: #111827;
+      font-weight: 800;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.18);
+      z-index: 1;
+      position: relative;
+      margin-top: 2px;
+    }
+
+    .story-year {
+      font-size: 1.9rem;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .story-title {
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-size: 1.02rem;
+    }
+
+    .location-shell {
+      display: block;
+      max-width: 1020px;
+      margin: 0 auto;
+    }
+
+    .location-frame {
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+      border: 1px solid rgba(216,176,109,0.16);
+      box-shadow: var(--shadow);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.04));
+      backdrop-filter: blur(12px);
+      padding: 16px;
+    }
+
+    .location-map-wrap {
+      position: relative;
+      overflow: hidden;
+      border-radius: 24px;
+      min-height: 560px;
+      background: #0b1220;
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .location-map-wrap iframe {
+      width: 100%;
+      height: 560px;
+      border: 0;
+      display: block;
+      filter: saturate(1.02) contrast(1.02);
+    }
+
+    .location-overlay {
+      position: absolute;
+      left: 24px;
+      right: 24px;
+      bottom: 24px;
+      z-index: 2;
+      padding: 22px 22px 20px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, rgba(8,13,24,0.88), rgba(8,13,24,0.76));
+      border: 1px solid rgba(216,176,109,0.18);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 20px 50px rgba(0,0,0,0.28);
+    }
+
+    .location-overlay::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 24px;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(216,176,109,0.06), transparent 42%, transparent 70%, rgba(255,255,255,0.04));
+    }
+
+    .location-topline {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(216,176,109,0.14);
+      color: #f3dfb8;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 18px;
+      align-items: end;
+      position: relative;
+      z-index: 1;
+    }
+
+    .location-actions {
+      display: flex;
+      justify-content: flex-end;
+      align-items: end;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .photo {
+      position: relative;
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(216,176,109,0.14);
+      box-shadow: var(--shadow-soft);
+      background: rgba(255,255,255,0.04);
+      cursor: pointer;
+      transition: transform .35s ease, box-shadow .35s ease;
+    }
+
+    .photo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 26px 60px rgba(0,0,0,0.3);
+    }
+
+    .photo img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      transition: transform .8s ease;
+    }
+
+    .photo:hover img { transform: scale(1.07); }
+
+    .photo-caption {
+      position: absolute;
+      inset: auto 0 0 0;
+      padding: 16px;
+      background: linear-gradient(to top, rgba(8,13,24,0.88), rgba(8,13,24,0));
+    }
+
+    .gift-wrap {
+      display: grid;
+      grid-template-columns: 0.96fr 1.04fr;
+      gap: 22px;
+      align-items: center;
+    }
+
+    .qris-box {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(216,176,109,0.16);
+      background: rgba(255,255,255,0.04);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .qris-box img {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+    }
+
+    .forms-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 22px;
+      align-items: start;
+    }
+
+    .form-card,
+    .wish-board {
+      padding: 30px 24px;
+    }
+
+    .form-group { margin-bottom: 16px; }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .input,
+    .textarea,
+    .select {
+      width: 100%;
+      border-radius: 16px;
+      border: 1px solid rgba(216,176,109,0.16);
+      background: rgba(255,255,255,0.05);
+      color: var(--text);
+      padding: 14px 16px;
+      outline: none;
+      transition: border-color .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+
+    .input::placeholder,
+    .textarea::placeholder { color: #aeb8c8; }
+
+    .select option {
+      color: #111827;
+    }
+
+    .input:focus,
+    .textarea:focus,
+    .select:focus {
+      border-color: rgba(216,176,109,0.5);
+      box-shadow: 0 0 0 4px rgba(216,176,109,0.12);
+      background: rgba(255,255,255,0.07);
+    }
+
+    .textarea {
+      min-height: 140px;
+      resize: vertical;
+    }
+
+    .inline-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .status-box {
+      margin-top: 16px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      font-size: 0.94rem;
+      display: none;
+    }
+
+    .status-box.show { display: block; }
+
+    .status-success {
+      background: rgba(99,194,154,0.12);
+      border: 1px solid rgba(99,194,154,0.3);
+      color: #c8f3df;
+    }
+
+    .status-error {
+      background: rgba(227,93,93,0.12);
+      border: 1px solid rgba(227,93,93,0.3);
+      color: #ffd4d4;
+    }
+
+    .wish-board h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      margin-bottom: 6px;
+    }
+
+    .wish-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+      max-height: 520px;
+      overflow: auto;
+      padding-right: 4px;
+    }
+
+    .wish-item {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(216,176,109,0.12);
+    }
+
+    .wish-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 10px;
+    }
+
+    .wish-name {
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .wish-attendance {
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid rgba(216,176,109,0.14);
+      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+    }
+
+    .empty-state {
+      margin-top: 18px;
+      padding: 16px;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.04);
+      border: 1px dashed rgba(216,176,109,0.18);
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .footer {
+      padding: 40px 20px 90px;
+      text-align: center;
+      color: var(--muted);
+      border-top: 1px solid rgba(216,176,109,0.08);
+      position: relative;
+      z-index: 1;
+    }
+
+    .footer-title {
+      font-size: 2.1rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .fade-up {
+      opacity: 0;
+      transform: translateY(28px) scale(.985);
+      transition: all 0.95s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .fade-up.show {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: rgba(8,13,24,0.9);
+      backdrop-filter: blur(10px);
+      z-index: 120;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .35s ease, visibility .35s ease;
+    }
+
+    .lightbox.show { opacity: 1; visibility: visible; }
+
+    .lightbox-inner {
+      position: relative;
+      width: min(94vw, 920px);
+      transform: scale(.94) translateY(10px);
+      transition: transform .4s cubic-bezier(.2,.8,.2,1);
+    }
+
+    .lightbox.show .lightbox-inner {
+      transform: scale(1) translateY(0);
+    }
+
+    .lightbox img {
+      width: 100%;
+      max-height: 82vh;
+      object-fit: contain;
+      border-radius: 24px;
+      border: 1px solid rgba(216,176,109,0.18);
+      background: rgba(255,255,255,0.04);
+      box-shadow: var(--shadow);
+    }
+
+    .close-lightbox {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+    }
+
+    .utility-row {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-top: 24px;
+    }
+
+    .badge-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 18px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(216,176,109,0.18);
+      background: rgba(255,255,255,0.05);
+      color: var(--accent);
+      font-size: 0.88rem;
+    }
+
+    @media (max-width: 980px) {
+      .grid-2,
+      .grid-3,
+      .gallery,
+      .gift-wrap,
+      .forms-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .location-actions {
+        justify-content: flex-start;
+      }
+
+      .photo img { height: 340px; }
+    }
+
+    @media (max-width: 640px) {
+      :root { --section-space: 76px; }
+
+      .card,
+      .cover-card,
+      .quote-box,
+      .form-card,
+      .wish-board,
+      .story-item {
+        padding: 24px 18px;
+      }
+
+      .countdown { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .photo img { height: 280px; }
+      .icon-btn { width: 52px; height: 52px; }
+      .wish-top { flex-direction: column; align-items: start; }
+      .story-list::before { left: 17px; }
+      .story-item { grid-template-columns: 46px 1fr; gap: 14px; }
+
+      .location-frame {
+        padding: 10px;
+        border-radius: 24px;
+      }
+
+      .location-map-wrap {
+        min-height: 460px;
+        border-radius: 20px;
+      }
+
+      .location-map-wrap iframe {
+        height: 460px;
+      }
+
+      .location-overlay {
+        left: 14px;
+        right: 14px;
+        bottom: 14px;
+        padding: 18px 16px 16px;
+        border-radius: 18px;
+      }
+
+      .location-topline {
+        font-size: 0.72rem;
+        letter-spacing: 0.14em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!--
+    =========================================================
+    PETUNJUK PAKAI
+    =========================================================
+    1. Ganti data di bagian CONFIG.
+    2. Simpan file ini sebagai index.html.
+    3. Taruh file foto, musik, dan QRIS di folder yang sama.
+    4. Untuk RSVP + ucapan online, isi CONFIG.formEndpoint.
+    5. Kalau endpoint belum diisi, data RSVP disimpan di browser sebagai demo.
+  -->
+
+  <div class="cover" id="cover">
+    <div class="cover-card glass">
+      <div class="eyebrow">Undangan Pernikahan</div>
+      <div class="script">The Wedding Of</div>
+      <h1 class="cover-title" id="coverTitle">Naufal &amp; Adinda</h1>
+      <p class="cover-text" id="coverText">
+        Dengan memohon rahmat dan ridha Allah SWT, kami mengundang Bapak/Ibu/Saudara/i untuk hadir dan memberikan doa restu pada hari bahagia kami.
+      </p>
+      <!-- <div class="badge-note">✨ Responsif • Elegan • RSVP &amp; Ucapan Tamu</div> -->
+      <div class="utility-row">
+        <button class="btn" id="openInvitation">Buka Undangan</button>
+      </div>
+    </div>
+  </div>
+
+  <button class="icon-btn fab-music" id="musicToggle" aria-label="Putar atau pause musik">♫</button>
+
+  <audio id="bgMusic" loop>
+    <source src="musik1.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-inner">
+      <button class="icon-btn close-lightbox" id="closeLightbox" aria-label="Tutup preview">✕</button>
+      <img id="lightboxImage" src="" alt="Preview galeri" />
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-wrap fade-up">
+      <div class="eyebrow">The Wedding Of</div>
+      <h1 class="hero-title" id="heroTitle">
+        Muhammad Naufal Adani
+        <span class="ampersand">&amp;</span>
+        Adinda Megatriana
+      </h1>
+      <div class="hero-subtitle">Bismillahirrahmanirrahim</div>
+      <p class="hero-desc" id="heroQuote">
+        Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu pasangan hidup dari jenismu sendiri agar kamu merasa tenteram di sisinya, dan dijadikan-Nya di antaramu rasa kasih dan sayang.
+      </p>
+      <div class="date-pill" id="heroDate">Minggu, 20 Desember 2026</div>
+      <div class="utility-row">
+        <a class="btn" href="#rsvp">Konfirmasi Kehadiran</a>
+        <a class="btn-outline" href="#lokasi">Lihat Lokasi</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">Bride & Groom</div>
+        <h2 class="section-title">Mempelai</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Dengan penuh rasa syukur, kami mempersembahkan dua hati yang dipertemukan dengan cara terbaik, lalu didekatkan oleh doa, waktu, dan restu keluarga.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="glass card fade-up">
+          <div class="mini-label">Mempelai Pria</div>
+          <div style="margin: 10px 0 20px; display:flex; justify-content:center;">
+            <img src="cowo.jpg" alt="Foto mempelai pria" loading="lazy" style="width: 170px; height: 170px; object-fit: cover; border-radius: 999px; border: 3px solid rgba(216,176,109,0.35); box-shadow: 0 14px 30px rgba(0,0,0,0.22);" />
+          </div>
+          <h3 class="name" id="groomName">Muhammad Naufal Adani, S.Kom</h3>
+          <p class="body-text" id="groomParents">
+            Putra pertama dari Bapak Hernanto Noor dan Ibu Dena Erita.
+          </p>
+          <p class="family-note">
+            Sosok yang tenang, tulus, dan hangat, melangkah menuju hari bahagia dengan cinta yang dewasa dan niat yang baik.
+          </p>
+        </article>
+
+        <article class="glass card fade-up">
+          <div class="mini-label">Mempelai Wanita</div>
+          <div style="margin: 10px 0 20px; display:flex; justify-content:center;">
+            <img src="cewe.jpg" alt="Foto mempelai wanita" loading="lazy" style="width: 170px; height: 170px; object-fit: cover; border-radius: 999px; border: 3px solid rgba(216,176,109,0.35); box-shadow: 0 14px 30px rgba(0,0,0,0.22);" />
+          </div>
+          <h3 class="name" id="brideName">Adinda Megatriana</h3>
+          <p class="body-text" id="brideParents">
+            Putri ketiga dari Bapak Afrizal dan Ibu Herma Anggriani.
+          </p>
+          <p class="family-note">
+            Sosok yang lembut dan menguatkan, hadir membawa keteduhan, harapan indah, dan kebahagiaan yang sederhana namun penuh makna.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">Save The Date</div>
+        <h2 class="section-title">Hari Bahagia</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <article class="glass card fade-up">
+          <div class="mini-label">Detail Acara</div>
+          <div class="big-date" id="bigDate">20<br>Des</div>
+          <div class="detail-list">
+            <div><strong>Akad Nikah</strong><br><span id="akadTime">08.00 WIB</span></div>
+            <div><strong>Resepsi</strong><br><span id="receptionTime">11.00 WIB – 14.00 WIB</span></div>
+            <div><strong>Tempat</strong><br><span id="venueName">Rumah Mempelai Wanita</span></div>
+            <div><strong>Alamat</strong><br><span id="venueAddress">Komplek BSD 1 Blok A/3 Pasie Nan Tigo, Koto Tangah, Padang</span></div>
+          </div>
+          <div class="inline-actions" style="margin-top:18px;">
+            <a class="btn" id="mapsButton" href="#" target="_blank" rel="noopener noreferrer">📍 Buka Google Maps</a>
+          </div>
+        </article>
+
+        <article class="glass card fade-up">
+          <div class="mini-label">Menuju Hari Bahagia</div>
+          <div class="countdown" id="countdown">
+            <div class="count-item"><strong id="days">0</strong><span>Hari</span></div>
+            <div class="count-item"><strong id="hours">0</strong><span>Jam</span></div>
+            <div class="count-item"><strong id="minutes">0</strong><span>Menit</span></div>
+            <div class="count-item"><strong id="seconds">0</strong><span>Detik</span></div>
+          </div>
+          <p class="field-note" style="margin-top:18px;">
+            Kami menantikan momen indah ini bersama orang-orang tercinta yang hadir membawa doa, kebahagiaan, dan kehangatan.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="glass quote-box fade-up">
+        <div class="mini-label">Doa &amp; Harapan</div>
+        <div class="quote-text">
+          Semoga Allah menghimpun yang terserak dari keduanya, memberkahi mereka berdua, dan menjadikan rumah tangga ini sebagai tempat tumbuhnya cinta yang menenangkan, iman yang menguatkan, dan kebaikan yang tak putus-putus.
+        </div>
+        <div class="quote-note">
+          Mohon doa terbaik agar perjalanan kami senantiasa dipenuhi sakinah, mawaddah, dan rahmah.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="kisah">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">Our Story</div>
+        <h2 class="section-title">Cerita Kami</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Bukan tentang pertemuan yang paling cepat, tetapi tentang bagaimana dua hati tumbuh saling mengenal, saling menerima, dan akhirnya memilih untuk berjalan bersama.
+        </p>
+      </div>
+
+      <div class="story-list">
+        <article class="glass story-item fade-up">
+          <div class="story-dot">1</div>
+          <div>
+            <div class="story-year">Awal Bertemu</div>
+            <div class="story-title">Padang, tempat cerita ini dimulai</div>
+            <p class="story-text">
+              Di kota Padang, semesta mempertemukan kami dalam suasana yang sederhana namun berkesan. Tidak ada yang benar-benar tahu bahwa dari perkenalan yang ringan itu, perlahan tumbuh rasa nyaman yang sulit dijelaskan.
+            </p>
+          </div>
+        </article>
+
+        <article class="glass story-item fade-up">
+          <div class="story-dot">2</div>
+          <div>
+            <div class="story-year">Pasir Jambak</div>
+            <div class="story-title">Langkah kecil yang membuat hati semakin dekat</div>
+            <p class="story-text">
+              Suatu hari, kami pergi ke Pasir Jambak. Di sana, di tengah angin laut dan langit yang terasa lebih tenang, percakapan mengalir lebih jujur. Dari momen itu, kami mulai merasa bahwa kebersamaan ini bukan sekadar kebetulan.
+            </p>
+          </div>
+        </article>
+
+        <article class="glass story-item fade-up">
+          <div class="story-dot">3</div>
+          <div>
+            <div class="story-year">Dikenalkan &amp; Dijalani</div>
+            <div class="story-title">Bukan hanya bertemu, tapi juga dipertemukan</div>
+            <p class="story-text">
+              Hubungan ini kemudian dijalani dengan lebih sungguh-sungguh. Kami saling dikenalkan, saling memahami keluarga, dan belajar menerima satu sama lain dalam versi terbaik maupun paling sederhana. Ternyata, semakin dijalani, semakin terasa cocok.
+            </p>
+          </div>
+        </article>
+
+        <article class="glass story-item fade-up">
+          <div class="story-dot">4</div>
+          <div>
+            <div class="story-year">1 April 2024</div>
+            <div class="story-title">Tanggal yang ingin selalu dikenang</div>
+            <p class="story-text">
+              Saat cuti pada 1 April 2024, ada banyak hal yang terasa semakin jelas. Bukan hanya tentang rasa, tetapi tentang keyakinan. Sejak saat itu, kami tahu bahwa hubungan ini layak dijaga, diperjuangkan, dan dibawa menuju ikatan yang lebih indah.
+            </p>
+          </div>
+        </article>
+
+        <article class="glass story-item fade-up">
+          <div class="story-dot">5</div>
+          <div>
+            <div class="story-year">Menuju Pernikahan</div>
+            <div class="story-title">Dari cerita yang sederhana menjadi janji seumur hidup</div>
+            <p class="story-text">
+              Dengan penuh syukur, kami memilih untuk melangkah ke jenjang pernikahan. Semoga apa yang dimulai dengan pertemuan sederhana ini berakhir dengan cinta yang selalu tumbuh, rumah yang hangat, dan kehidupan yang diberkahi Allah SWT.
+            </p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="lokasi">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">Location</div>
+        <h2 class="section-title">Lokasi Acara</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Kami sertakan tampilan Google Maps agar memudahkan perjalanan Anda menuju tempat acara.
+        </p>
+      </div>
+
+      <div class="location-shell">
+        <div class="location-frame fade-up">
+          <div class="location-map-wrap">
+            <iframe
+              id="googleMapsEmbed"
+              src="https://www.google.com/maps?q=Komplek%20BSD%201%20Blok%20A%2F3%20Pasie%20Nan%20Tigo%2C%20Koto%20Tangah%2C%20Padang&z=15&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              aria-label="Google Maps lokasi acara">
+            </iframe>
+
+            <div class="location-overlay">
+              <div class="location-topline">📍 Lokasi Acara</div>
+              <div class="location-grid">
+                <div class="location-info">
+                  <h3 class="name" style="font-size:2.35rem; margin-bottom:10px;" id="locationTitle">Rumah Mempelai Wanita</h3>
+                  <p class="body-text" id="locationText" style="max-width:760px;">
+                    Komplek BSD 1 Blok A/3, Pasie Nan Tigo, Koto Tangah, Padang
+                  </p>
+                  <p class="family-note" style="margin-top:14px; padding-top:14px; border-top:1px solid rgba(216,176,109,0.12); max-width:760px;">
+                    Silakan gunakan tombol di bawah ini untuk membuka rute langsung menuju lokasi acara melalui Google Maps.
+                  </p>
+                </div>
+                <div class="location-actions">
+                  <a class="btn" id="mapsButtonSecondary" href="#" target="_blank" rel="noopener noreferrer">📍 Lihat Rute ke Lokasi</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="galeri">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">Gallery</div>
+        <h2 class="section-title">Galeri Momen</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Klik foto untuk melihat tampilan lebih besar.
+        </p>
+      </div>
+
+      <div class="gallery" id="galleryList">
+        <figure class="photo fade-up" data-image="1.jpg">
+          <img src="1.jpg" alt="Galeri momen 1" loading="lazy" />
+          <figcaption class="photo-caption">Momen 01</figcaption>
+        </figure>
+        <figure class="photo fade-up" data-image="2.jpg">
+          <img src="2.jpg" alt="Galeri momen 2" loading="lazy" />
+          <figcaption class="photo-caption">Momen 02</figcaption>
+        </figure>
+        <figure class="photo fade-up" data-image="3.jpg">
+          <img src="3.jpg" alt="Galeri momen 3" loading="lazy" />
+          <figcaption class="photo-caption">Momen 03</figcaption>
+        </figure>
+        <figure class="photo fade-up" data-image="4.jpg">
+          <img src="4.jpg" alt="Galeri momen 4" loading="lazy" />
+          <figcaption class="photo-caption">Momen 04</figcaption>
+        </figure>
+        <figure class="photo fade-up" data-image="5.jpg">
+          <img src="5.jpg" alt="Galeri momen 5" loading="lazy" />
+          <figcaption class="photo-caption">Momen 05</figcaption>
+        </figure>
+        <figure class="photo fade-up" data-image="6.jpg">
+          <img src="6.jpg" alt="Galeri momen 6" loading="lazy" />
+          <figcaption class="photo-caption">Momen 06</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="gift">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">Wedding Gift</div>
+        <h2 class="section-title">Amplop Digital</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Kehadiran dan doa restu Anda adalah hadiah terindah bagi kami. Namun apabila berkenan memberikan tanda kasih, dapat melalui QRIS berikut.
+        </p>
+      </div>
+
+      <div class="glass card fade-up">
+        <div class="gift-wrap">
+          <div class="qris-box">
+            <img src="foto_qris.jpeg" alt="QRIS Wedding Gift" loading="lazy" />
+          </div>
+          <div>
+            <div class="mini-label">Transfer via QRIS</div>
+            <h3 class="name" style="font-size:2.2rem;">Wedding Gift</h3>
+            <p class="body-text">
+              Scan QRIS di samping untuk mengirim hadiah digital. Semoga segala doa, perhatian, dan kebaikan yang diberikan mendapatkan balasan keberkahan yang berlipat.
+            </p>
+            <p class="family-note">
+              Pastikan file <strong>foto_qris.jpeg</strong> berada di folder yang sama dengan file HTML ini.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="rsvp">
+    <div class="container">
+      <div class="section-head fade-up">
+        <div class="script">RSVP &amp; Wishes</div>
+        <h2 class="section-title">Konfirmasi & Ucapan</h2>
+        <div class="divider"></div>
+        <p class="section-desc">
+          Pengunjung bisa langsung mengirim konfirmasi hadir atau tidak hadir sekaligus menuliskan pesan selamat di halaman ini, tanpa diarahkan ke WhatsApp.
+        </p>
+      </div>
+
+      <div class="forms-grid">
+        <article class="glass form-card fade-up">
+          <div class="mini-label">Kirim Kehadiran &amp; Ucapan</div>
+          <form id="wishForm">
+            <div class="form-group">
+              <label for="guestName">Nama</label>
+              <input class="input" id="guestName" name="name" type="text" placeholder="Tulis nama Anda" required />
+            </div>
+
+            <div class="form-group">
+              <label for="guestAttendance">Konfirmasi Kehadiran</label>
+              <select class="select" id="guestAttendance" name="attendance" required>
+                <option value="">Pilih salah satu</option>
+                <option value="Hadir">Hadir</option>
+                <option value="Tidak Hadir">Tidak Hadir</option>
+                <option value="Masih Diusahakan">Masih Diusahakan</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guestCount">Jumlah Tamu</label>
+              <select class="select" id="guestCount" name="guestCount">
+                <option value="1">1 Orang</option>
+                <option value="2">2 Orang</option>
+                <option value="3">3 Orang</option>
+                <option value="4">4 Orang</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="guestMessage">Ucapan</label>
+              <textarea class="textarea" id="guestMessage" name="message" placeholder="Tulis doa dan ucapan terbaik Anda" required></textarea>
+            </div>
+
+            <p class="field-note">
+              Best practice: untuk penggunaan sungguhan, sambungkan form ini ke Google Apps Script atau endpoint backend milikmu agar semua RSVP dan ucapan tersimpan online.
+            </p>
+
+            <div class="inline-actions">
+              <button class="btn" type="submit">Kirim Ucapan</button>
+              <button class="btn-outline" type="button" id="loadDemoData">Isi Contoh</button>
+            </div>
+
+            <div id="formStatus" class="status-box" role="status" aria-live="polite"></div>
+          </form>
+        </article>
+
+        <aside class="glass wish-board fade-up">
+          <div class="mini-label">Daftar Ucapan</div>
+          <h3>Ucapan Tamu</h3>
+          <p class="muted">
+            Area ini otomatis menampilkan ucapan yang sudah masuk. Jika endpoint online belum dihubungkan, data akan disimpan sementara di browser sebagai mode demo.
+          </p>
+
+          <div class="empty-state" id="emptyState">
+            Belum ada ucapan yang tampil. Jadilah yang pertama mengirim doa dan ucapan terbaik.
+          </div>
+
+          <div class="wish-list" id="wishList"></div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-title" id="footerTitle">Muhammad Naufal Adani &amp; Adinda Megatriana</div>
+    <div>Terima kasih atas doa dan restu yang diberikan.</div>
+  </footer>
+
+  <script>
+    const CONFIG = {
+      brideShort: 'Adinda',
+      groomShort: 'Naufal',
+      brideFull: 'Adinda Megatriana',
+      groomFull: 'Muhammad Naufal Adani, S.Kom',
+      brideParents: 'Putri ketiga dari Bapak Afrizal dan Ibu Herma Anggriani.',
+      groomParents: 'Putra pertama dari Bapak Hernanto Noor dan Ibu Dena Erita.',
+      eventDateISO: '2026-12-20T08:00:00+07:00',
+      eventDateLabel: 'Minggu, 20 Desember 2026',
+      akadTime: '08.00 WIB',
+      receptionTime: '11.00 WIB – 14.00 WIB',
+      venueName: 'Rumah Mempelai Wanita',
+      venueAddress: 'Komplek BSD 1 Blok A/3 Pasie Nan Tigo, Koto Tangah, Padang',
+      mapsQuery: 'Komplek BSD 1 Blok A/3 Pasie Nan Tigo, Koto Tangah, Padang',
+      backgroundMusic: 'musik1.mp3',
+      galleryImages: ['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg', '6.jpg'],
+      qrisImage: 'foto_qris.jpeg',
+
+      // isi kalau sudah punya endpoint online
+      // contoh: 'https://script.google.com/macros/s/AKfycb.../exec'
+      formEndpoint: '',
+
+      localStorageKey: 'wedding_wishes_demo_v1'
+    };
+
+    const cover = document.getElementById('cover');
+    const openInvitation = document.getElementById('openInvitation');
+    const bgMusic = document.getElementById('bgMusic');
+    const musicToggle = document.getElementById('musicToggle');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImage = document.getElementById('lightboxImage');
+    const closeLightbox = document.getElementById('closeLightbox');
+    const wishForm = document.getElementById('wishForm');
+    const formStatus = document.getElementById('formStatus');
+    const wishList = document.getElementById('wishList');
+    const emptyState = document.getElementById('emptyState');
+    const loadDemoData = document.getElementById('loadDemoData');
+
+    let musicPlaying = false;
+
+    function escapeHtml(str = '') {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function formatDateTime(value) {
+      try {
+        return new Intl.DateTimeFormat('id-ID', {
+          dateStyle: 'medium',
+          timeStyle: 'short'
+        }).format(new Date(value));
+      } catch {
+        return value;
+      }
+    }
+
+    function showStatus(message, type = 'success') {
+      formStatus.textContent = message;
+      formStatus.className = 'status-box show ' + (type === 'success' ? 'status-success' : 'status-error');
+    }
+
+    function playMusic() {
+      bgMusic.play().then(() => {
+        musicPlaying = true;
+        musicToggle.textContent = '❚❚';
+        musicToggle.classList.add('playing');
+      }).catch(() => {
+        musicPlaying = false;
+        musicToggle.textContent = '♫';
+        musicToggle.classList.remove('playing');
+      });
+    }
+
+    function pauseMusic() {
+      bgMusic.pause();
+      musicPlaying = false;
+      musicToggle.textContent = '♫';
+      musicToggle.classList.remove('playing');
+    }
+
+    function bindConfig() {
+      document.title = `Wedding Invitation | ${CONFIG.groomShort} & ${CONFIG.brideShort}`;
+      document.getElementById('coverTitle').innerHTML = `${CONFIG.groomShort} &amp; ${CONFIG.brideShort}`;
+      document.getElementById('heroTitle').innerHTML = `${CONFIG.groomFull}<span class="ampersand">&amp;</span>${CONFIG.brideFull}`;
+      document.getElementById('heroDate').textContent = CONFIG.eventDateLabel;
+      document.getElementById('groomName').textContent = CONFIG.groomFull;
+      document.getElementById('brideName').textContent = CONFIG.brideFull;
+      document.getElementById('groomParents').textContent = CONFIG.groomParents;
+      document.getElementById('brideParents').textContent = CONFIG.brideParents;
+      document.getElementById('akadTime').textContent = CONFIG.akadTime;
+      document.getElementById('receptionTime').textContent = CONFIG.receptionTime;
+      document.getElementById('venueName').textContent = CONFIG.venueName;
+      document.getElementById('venueAddress').textContent = CONFIG.venueAddress;
+      document.getElementById('locationTitle').textContent = CONFIG.venueName;
+      document.getElementById('locationText').textContent = CONFIG.venueAddress;
+      document.getElementById('footerTitle').innerHTML = `${CONFIG.groomFull} &amp; ${CONFIG.brideFull}`;
+
+      bgMusic.querySelector('source').src = CONFIG.backgroundMusic;
+      bgMusic.load();
+
+      const mapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(CONFIG.mapsQuery)}`;
+      const embedUrl = `https://www.google.com/maps?q=${encodeURIComponent(CONFIG.mapsQuery)}&z=15&output=embed`;
+
+      document.getElementById('mapsButton').href = mapUrl;
+      document.getElementById('mapsButtonSecondary').href = mapUrl;
+      document.getElementById('googleMapsEmbed').src = embedUrl;
+    }
+
+    function updateCountdown() {
+      const targetDate = new Date(CONFIG.eventDateISO).getTime();
+      const now = Date.now();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        document.getElementById('days').textContent = '0';
+        document.getElementById('hours').textContent = '0';
+        document.getElementById('minutes').textContent = '0';
+        document.getElementById('seconds').textContent = '0';
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / (1000 * 60)) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      document.getElementById('days').textContent = String(days);
+      document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+      document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+      document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+    }
+
+    function getLocalWishes() {
+      try {
+        return JSON.parse(localStorage.getItem(CONFIG.localStorageKey) || '[]');
+      } catch {
+        return [];
+      }
+    }
+
+    function saveLocalWish(item) {
+      const existing = getLocalWishes();
+      existing.unshift(item);
+      localStorage.setItem(CONFIG.localStorageKey, JSON.stringify(existing));
+    }
+
+    function renderWishes(items) {
+      wishList.innerHTML = '';
+
+      if (!items || items.length === 0) {
+        emptyState.style.display = 'block';
+        return;
+      }
+
+      emptyState.style.display = 'none';
+
+      items.forEach((item) => {
+        const el = document.createElement('article');
+        el.className = 'wish-item';
+        el.innerHTML = `
+          <div class="wish-top">
+            <div>
+              <div class="wish-name">${escapeHtml(item.name || 'Tamu')}</div>
+              <small class="muted">${escapeHtml(formatDateTime(item.createdAt || new Date().toISOString()))}</small>
+            </div>
+            <div class="wish-attendance">${escapeHtml(item.attendance || '-')}</div>
+          </div>
+          <p>${escapeHtml(item.message || '')}</p>
+        `;
+        wishList.appendChild(el);
+      });
+    }
+
+    async function fetchRemoteWishes() {
+      if (!CONFIG.formEndpoint) {
+        renderWishes(getLocalWishes());
+        return;
+      }
+
+      try {
+        const response = await fetch(CONFIG.formEndpoint, { method: 'GET' });
+        if (!response.ok) throw new Error('Gagal memuat data ucapan.');
+        const data = await response.json();
+        renderWishes(Array.isArray(data) ? data : (data.data || []));
+      } catch {
+        renderWishes(getLocalWishes());
+      }
+    }
+
+    async function submitWish(payload) {
+      if (!CONFIG.formEndpoint) {
+        saveLocalWish(payload);
+        renderWishes(getLocalWishes());
+        return { ok: true, mode: 'demo' };
+      }
+
+      const response = await fetch(CONFIG.formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+      });
+
+      if (!response.ok) {
+        throw new Error('Pengiriman gagal. Silakan coba lagi.');
+      }
+
+      return { ok: true, mode: 'live' };
+    }
+
+    openInvitation.addEventListener('click', () => {
+      cover.classList.add('hidden');
+      playMusic();
+    });
+
+    musicToggle.addEventListener('click', () => {
+      if (musicPlaying) pauseMusic();
+      else playMusic();
+    });
+
+    loadDemoData.addEventListener('click', () => {
+      document.getElementById('guestName').value = 'Sahabat Bahagia';
+      document.getElementById('guestAttendance').value = 'Hadir';
+      document.getElementById('guestCount').value = '2';
+      document.getElementById('guestMessage').value = 'Selamat menempuh hidup baru. Semoga selalu dipenuhi cinta, keberkahan, dan kebahagiaan sampai tua nanti.';
+    });
+
+    wishForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(wishForm);
+      const payload = {
+        name: String(formData.get('name') || '').trim(),
+        attendance: String(formData.get('attendance') || '').trim(),
+        guestCount: String(formData.get('guestCount') || '1').trim(),
+        message: String(formData.get('message') || '').trim(),
+        createdAt: new Date().toISOString()
+      };
+
+      if (!payload.name || !payload.attendance || !payload.message) {
+        showStatus('Mohon lengkapi nama, kehadiran, dan ucapan terlebih dahulu.', 'error');
+        return;
+      }
+
+      try {
+        const result = await submitWish(payload);
+        wishForm.reset();
+        showStatus(
+          result.mode === 'live'
+            ? 'Ucapan berhasil dikirim. Terima kasih atas doa dan konfirmasinya.'
+            : 'Ucapan berhasil disimpan dalam mode demo browser. Hubungkan endpoint online agar tersimpan untuk semua tamu.',
+          'success'
+        );
+        await fetchRemoteWishes();
+      } catch (error) {
+        showStatus(error.message || 'Terjadi kesalahan saat mengirim ucapan.', 'error');
+      }
+    });
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.fade-up').forEach((el) => observer.observe(el));
+
+    document.querySelectorAll('.photo').forEach((item) => {
+      item.addEventListener('click', () => {
+        const src = item.getAttribute('data-image');
+        lightboxImage.src = src;
+        lightbox.classList.add('show');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closePreview() {
+      lightbox.classList.remove('show');
+      document.body.style.overflow = '';
+      setTimeout(() => {
+        lightboxImage.src = '';
+      }, 200);
+    }
+
+    closeLightbox.addEventListener('click', closePreview);
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox) closePreview();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && lightbox.classList.contains('show')) closePreview();
+    });
+
+    bindConfig();
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    fetchRemoteWishes();
+  </script>
+</body>
+</html>
